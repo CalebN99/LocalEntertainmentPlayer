@@ -1,9 +1,11 @@
 <template>
   <div class="home">
    <h2 class="bannerName">MyVideo</h2>
+      <VideoPlayer />
     <div class="grid">
-       <div class="videoToken">
 
+<div class="videoToken">
+         
        </div>
        <div class="videoToken">
 
@@ -13,10 +15,15 @@
 </template>
 
 <script>
+
+import VideoPlayer from './VideoPlayer'
 export default {
   name: 'Home',
   props: {
     msg: String
+  },
+  components: {
+    VideoPlayer
   }
 }
 </script>
