@@ -1,0 +1,24 @@
+.Movie {
+  height: 24vh;
+  width: 18vw;
+  margin-left: 1vw;
+  margin-right: 1vw;
+  display: inline-block;
+  margin-bottom: 3vh;
+}
+
+.Movie h2 {
+  color: white;
+}
+
+.movieBox {
+  height: 80%;
+  width: 100%;
+  border: 1px solid lightgray;
+  margin: 0 auto;
+}
+
+.moveTitle {
+  font-size: 3vw;
+  padding: 0;
+}

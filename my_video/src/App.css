@@ -1,0 +1,26 @@
+.App {
+  width: 100vw;
+  height: 100vh;
+  background: #222629;
+}
+.bannerLogo {
+  color: #86c232;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 2.2vw;
+  padding: 1.25vw;
+}
+.movieGrid {
+  width: 80vw;
+  border-right: 1px solid lightgray;
+  border-left: 1px solid lightgray;
+  margin: 0 auto;
+  margin-top: 2.25vw;
+  padding-left: 2vw;
+  padding-right: 2vw;
+}
+
+.gridWrapper {
+  margin: 0 auto;
+}
