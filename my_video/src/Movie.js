@@ -36,7 +36,7 @@ handleVideoLoad = (e) => {
         <div className="movieBox">
         <ReactPlayer
               
-              url={this.state.videoFileURL}
+              url="http://localhost:3030/video"
               width='100%'
               height='100%'
               controls = {true}
@@ -48,8 +48,6 @@ handleVideoLoad = (e) => {
       </div>
     );
   }
- 
-
 }
 
 export default Movie;
