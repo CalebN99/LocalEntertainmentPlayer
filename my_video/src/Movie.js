@@ -8,7 +8,9 @@ class Movie extends Component {
     super(props);
     this.state = {
      videoFileURL: '',
-     videoFileObject: null
+     videoFileObject: null,
+     apiUrl: "http://localhost:3030/video/",
+     movieTitle: this.props.movieurl.replace("_", " ")
     };
   };
 
@@ -17,18 +19,9 @@ handleChange = (e) => {
         [e.target.id] : e.target.value
     })
 }
-handleVideoLoad = (e) => {
-  console.log(e.target.files);
-  let files = e.target.files;
-  if (files.length === 1) {
-    let file = files[0];
-    this.setState({
-      videoFileURL: URL.createObjectURL(file),
-      videoFileObject: file
-    });
-  }
-  console.log(this.state.videoFileObject);
-}
+
+
+
   render() {
     console.log("YO")
     return (
@@ -36,15 +29,14 @@ handleVideoLoad = (e) => {
         <div className="movieBox">
         <ReactPlayer
               
-              url="http://localhost:3030/video"
+              url={this.state.apiUrl + this.props.movieurl}
               width='100%'
               height='100%'
               controls = {true}
   
               />
         </div>
-        <h2 className="movieTitle">Us</h2>
-        <input type="file" id="file" onChange={this.handleVideoLoad} accept="video/mp4,video/x-m4v,video/*"/>
+        <h2 className="movieTitle">{this.state.movieTitle}</h2>
       </div>
     );
   }

@@ -6,11 +6,12 @@ app.get('/', function (req, res) {
     res.send('hello world')
   })
 
-  app.get('/video', function(req, res) {
-    const path = '..\\Movies\\Napolean_Dynamite.mp4'
-    const stat = fs.statSync(path)
-    const fileSize = stat.size
-    const range = req.headers.range
+  app.get('/video/:id', function(req, res) {
+    console.log(req.params.id)
+    const path = '..\\Movies\\' + req.params.id + '.mp4';
+    const stat = fs.statSync(path);
+    const fileSize = stat.size;
+    const range = req.headers.range;
     
     if (range) {
     const parts = range.replace(/bytes=/, "").split("-")

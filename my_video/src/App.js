@@ -6,14 +6,8 @@ function App() {
       <h1 className="bannerLogo">MyVideo</h1>
       <div className="movieGrid">
         <div className="gridWrapper">
-          <Movie />
-          <Movie />
-          <Movie />
-          <Movie />
-          <Movie />
-          <Movie />
-          <Movie />
-          <Movie />
+          <Movie movieurl="Napolean_Dynamite"/>
+        
         </div>
       </div>
     </div>
