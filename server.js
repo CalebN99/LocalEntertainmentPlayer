@@ -2,6 +2,25 @@ const express = require('express');
 const fs = require('fs');
 const path = require('path');
 const app = express();
+const cors = require('cors')
+
+let whitelist = ['http://localhost:3000']
+
+app.use(cors())
+
+// let corsOptions = {
+//   origin: function (origin, callback) {
+//     if (whitelist.indexOf(origin) !== -1) {
+//       callback(null, true)
+//     } else {
+//       callback(new Error('Not allowed by CORS'))
+//     }
+//   }
+// }
+
+// // Then pass them to cors:
+// app.use(cors(corsOptions));
+
 
 app.get('/', function (req, res) {
     res.send('hello world')
@@ -24,10 +43,8 @@ app.get('/', function (req, res) {
 });
 
 app.get("/movieTitles", function (req, res) {
-  
-  
   console.log(movieArray)
-  res.send(movieArray)
+  res.send({ title: movieArray })
 })
 
 
