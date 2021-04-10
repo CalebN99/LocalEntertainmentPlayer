@@ -1,12 +1,38 @@
 const express = require('express');
 const fs = require('fs');
+const path = require('path');
 const app = express();
 
 app.get('/', function (req, res) {
     res.send('hello world')
   })
 
-  app.get('/video/:id', function(req, res) {
+  let movieArray = []
+  const directoryPath = path.join('C:\\Users\\paint\\OneDrive\\Documents\\GitHub', 'Movies');
+  console.log(__dirname)
+  //passsing directoryPath and callback function
+  fs.readdir(directoryPath, function (err, files) {
+  //handling error
+  if (err) return console.log('Unable to scan directory: ' + err);
+  //listing all files using forEach
+  files.forEach(function (file) {
+      // Do whatever you want to do with the file
+      let str = file.substring(0, file.length - 4);
+      console.log(str)
+      movieArray.push(str);
+  });
+});
+
+app.get("/movieTitles", function (req, res) {
+  
+  
+  console.log(movieArray)
+  res.send(movieArray)
+})
+
+
+
+app.get('/video/:id', function(req, res) {
     console.log(req.params.id)
     const path = '..\\Movies\\' + req.params.id + '.mp4';
     const stat = fs.statSync(path);
@@ -40,6 +66,10 @@ app.get('/', function (req, res) {
     fs.createReadStream(path).pipe(res)
     }
     })
+
+
+    
+
     
     
     app.listen(3030, function () {
