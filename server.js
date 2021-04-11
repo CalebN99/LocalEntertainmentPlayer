@@ -36,9 +36,9 @@ app.get('/', function (req, res) {
   //listing all files using forEach
   files.forEach(function (file) {
       // Do whatever you want to do with the file
-      let str = file.substring(0, file.length - 4);
-      console.log(str)
-      movieArray.push(str);
+      
+      console.log(file)
+      movieArray.push(file);
   });
 });
 
@@ -51,7 +51,7 @@ app.get("/movieTitles", function (req, res) {
 
 app.get('/video/:id', function(req, res) {
     console.log(req.params.id)
-    const path = '..\\Movies\\' + req.params.id + '.mp4';
+    const path = '..\\Movies\\' + req.params.id;
     const stat = fs.statSync(path);
     const fileSize = stat.size;
     const range = req.headers.range;
