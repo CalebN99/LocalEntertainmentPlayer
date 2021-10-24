@@ -27,7 +27,7 @@ app.get("/", function (req, res) {
 
 let movieArray = [];
 const directoryPath = path.join(
-  "C:\\Users\\paint\\OneDrive\\Documents\\GitHub",
+  "C:\\Users\\paint\\Documents\\GitHub",
   "Movies"
 );
 console.log(__dirname);
